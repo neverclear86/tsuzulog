@@ -13,5 +13,6 @@ package-lock.json
 yarn.lock
 
 /src-tauri
-/.vscode
+.vscode
+.idea
 /package.json
