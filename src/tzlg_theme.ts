@@ -1,7 +1,7 @@
 // You can also use the generator at https://skeleton.dev/docs/generator to create these values for you
-import type { CustomThemeConfig } from '@skeletonlabs/tw-plugin';
+import type { CustomThemeConfig } from "@skeletonlabs/tw-plugin"
 export const tzlg_theme: CustomThemeConfig = {
-	name: 'tzlg_theme',
+	name: "tzlg_theme",
 	properties: {
 		// =~= Theme Properties =~=
 		"--theme-font-family-base": "system-ui",
@@ -20,7 +20,7 @@ export const tzlg_theme: CustomThemeConfig = {
 		"--on-error": "255 255 255",
 		"--on-surface": "255 255 255",
 		// =~= Theme Colors  =~=
-		// primary | #0FBA81 
+		// primary | #0FBA81
 		"--color-primary-50": "219 245 236", // #dbf5ec
 		"--color-primary-100": "207 241 230", // #cff1e6
 		"--color-primary-200": "195 238 224", // #c3eee0
@@ -31,7 +31,7 @@ export const tzlg_theme: CustomThemeConfig = {
 		"--color-primary-700": "11 140 97", // #0b8c61
 		"--color-primary-800": "9 112 77", // #09704d
 		"--color-primary-900": "7 91 63", // #075b3f
-		// secondary | #4F46E5 
+		// secondary | #4F46E5
 		"--color-secondary-50": "229 227 251", // #e5e3fb
 		"--color-secondary-100": "220 218 250", // #dcdafa
 		"--color-secondary-200": "211 209 249", // #d3d1f9
@@ -42,7 +42,7 @@ export const tzlg_theme: CustomThemeConfig = {
 		"--color-secondary-700": "59 53 172", // #3b35ac
 		"--color-secondary-800": "47 42 137", // #2f2a89
 		"--color-secondary-900": "39 34 112", // #272270
-		// tertiary | #0EA5E9 
+		// tertiary | #0EA5E9
 		"--color-tertiary-50": "219 242 252", // #dbf2fc
 		"--color-tertiary-100": "207 237 251", // #cfedfb
 		"--color-tertiary-200": "195 233 250", // #c3e9fa
@@ -53,7 +53,7 @@ export const tzlg_theme: CustomThemeConfig = {
 		"--color-tertiary-700": "11 124 175", // #0b7caf
 		"--color-tertiary-800": "8 99 140", // #08638c
 		"--color-tertiary-900": "7 81 114", // #075172
-		// success | #84cc16 
+		// success | #84cc16
 		"--color-success-50": "237 247 220", // #edf7dc
 		"--color-success-100": "230 245 208", // #e6f5d0
 		"--color-success-200": "224 242 197", // #e0f2c5
@@ -64,7 +64,7 @@ export const tzlg_theme: CustomThemeConfig = {
 		"--color-success-700": "99 153 17", // #639911
 		"--color-success-800": "79 122 13", // #4f7a0d
 		"--color-success-900": "65 100 11", // #41640b
-		// warning | #EAB308 
+		// warning | #EAB308
 		"--color-warning-50": "252 244 218", // #fcf4da
 		"--color-warning-100": "251 240 206", // #fbf0ce
 		"--color-warning-200": "250 236 193", // #faecc1
@@ -75,7 +75,7 @@ export const tzlg_theme: CustomThemeConfig = {
 		"--color-warning-700": "176 134 6", // #b08606
 		"--color-warning-800": "140 107 5", // #8c6b05
 		"--color-warning-900": "115 88 4", // #735804
-		// error | #D41976 
+		// error | #D41976
 		"--color-error-50": "249 221 234", // #f9ddea
 		"--color-error-100": "246 209 228", // #f6d1e4
 		"--color-error-200": "244 198 221", // #f4c6dd
@@ -86,7 +86,7 @@ export const tzlg_theme: CustomThemeConfig = {
 		"--color-error-700": "159 19 89", // #9f1359
 		"--color-error-800": "127 15 71", // #7f0f47
 		"--color-error-900": "104 12 58", // #680c3a
-		// surface | #495a8f 
+		// surface | #495a8f
 		"--color-surface-50": "228 230 238", // #e4e6ee
 		"--color-surface-100": "219 222 233", // #dbdee9
 		"--color-surface-200": "210 214 227", // #d2d6e3
@@ -97,5 +97,5 @@ export const tzlg_theme: CustomThemeConfig = {
 		"--color-surface-700": "55 68 107", // #37446b
 		"--color-surface-800": "44 54 86", // #2c3656
 		"--color-surface-900": "36 44 70", // #242c46
-	}
+	},
 }

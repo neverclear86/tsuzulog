@@ -1,12 +1,15 @@
-import { join } from 'path'
-import type { Config } from 'tailwindcss'
-import typography from '@tailwindcss/typography';
-import { skeleton } from '@skeletonlabs/tw-plugin';
-import { tzlg_theme } from './src/tzlg_theme'
+import { join } from "path"
+import type { Config } from "tailwindcss"
+import typography from "@tailwindcss/typography"
+import { skeleton } from "@skeletonlabs/tw-plugin"
+import { tzlg_theme } from "./src/tzlg_theme"
 
 export default {
-	darkMode: 'class',
-	content: ['./src/**/*.{html,js,svelte,ts}', join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')],
+	darkMode: "class",
+	content: [
+		"./src/**/*.{html,js,svelte,ts}",
+		join(require.resolve("@skeletonlabs/skeleton"), "../**/*.{html,js,svelte,ts}"),
+	],
 	theme: {
 		extend: {},
 	},
@@ -16,14 +19,12 @@ export default {
 			themes: {
 				preset: [
 					{
-						name: 'hamlindigo',
+						name: "hamlindigo",
 						enhancements: true,
 					},
 				],
-				custom: [
-					tzlg_theme,
-				],
+				custom: [tzlg_theme],
 			},
 		}),
 	],
-} satisfies Config;
+} satisfies Config
