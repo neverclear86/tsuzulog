@@ -2,3 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+
+html,
+body {
+	@apply h-full overflow-hidden;
+}
+
+.milkdown {
+	@apply px-2 py-4;
+}
+.milkdown :focus-visible {
+	outline: none;
+}
+
+.editor {
+	@apply mx-auto prose dark:prose-invert;
+}
