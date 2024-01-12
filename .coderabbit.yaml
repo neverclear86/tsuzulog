@@ -1,0 +1,37 @@
+language: "ja"
+early_access: false
+reviews:
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: true
+  review_status: true
+  collapse_walkthrough: false
+  path_filters:
+    - "src/**/*.(ts|svelte)"
+    - "src-tauri/**/*.rs"
+    # - "tests/**/*.ts"
+  path_instructions:
+    - path: "src/**/*.(ts|svelte)"
+      instructions: |-
+        Sveltekitを使ったSPAアプリを構築するコードであり､以下の観点を重点においてレビューしてください
+        - Typescript部分はGoogleの JavaScript style guide と eslint に従ってレビューし、不具合あれば指摘してください
+        - 行数が多い場合に分割可能かの観点をレビューに含め､可能であれば指摘してください
+        - パフォーマンスを重視するプロジェクトのため､ループ内で複雑な処理が多い場合など修正可能であれば指摘してください
+        - lib/components/ 配下は個別のコンポーネントを定義する場所なので､再利用性の低いロジックなどが書かれている場合は指摘してください
+    - path: "src-tauri/**/*.rs"
+      instructions: |-
+        Tauriのメインプロセスを実装する部分のコードであり､以下の観点を重点においてレビューしてください
+        - 私はRustの初学者なので､指摘がある場合は学生でもわかるように詳しく解説してください
+        - パフォーマンスを重視しているので､DBの操作などで懸念がある場合は指摘してください
+
+  auto_review:
+    enabled: true
+    ignore_title_keywords:
+      - "WIP"
+      - "DO NOT MERGE"
+    drafts: false
+    base_branches:
+      - "develop"
+      - "issue/*"
+chat:
+  auto_reply: true
