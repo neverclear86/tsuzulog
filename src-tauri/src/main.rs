@@ -4,32 +4,29 @@
 use tauri::Manager;
 
 fn main() {
-    tauri::Builder::default()
+    let migrations = vec![
+        tauri_plugin_sql::Migration {
+            version: 1,
+            description: "create basic tables",
+            sql: include_str!("./migrations/0001_create_basic_tables.sql"),
+            kind: tauri_plugin_sql::MigrationKind::Up,
+        }
+    ];
+
+    match tauri::Builder::default()
         .setup(|app| {
             // 開発時だけdevtoolsを表示する。
             #[cfg(debug_assertions)]
             app.get_window("main").unwrap().open_devtools();
-
-            // App#manageメソッドでステート変数を管理するように登録できる。
-            // let state = "hello".to_owned();
-            // app.manage(state);
             Ok(())
         })
-        // .invoke_handler(tauri::generate_handler![db_commands::save_diary])
         .plugin(
             tauri_plugin_sql::Builder::default()
-                .add_migrations(
-                    "sqlite:tsuzulog.db",
-                    vec![
-                        tauri_plugin_sql::Migration {
-                            version: 1,
-                            description: "create basic tables",
-                            sql: include_str!("./migrations/0001_create_basic_tables.sql"),
-                            kind: tauri_plugin_sql::MigrationKind::Up,
-                        }
-                    ],
-                ).build(),
+                .add_migrations("sqlite:tsuzulog.db", migrations)
+                .build(),
         )
-        .run(tauri::generate_context!())
-        .expect("error while running tauri application");
+        .run(tauri::generate_context!()) {
+        Ok(()) => (),
+        Err(e) => panic!("error while running tauri application: {:?}", e)
+    }
 }
