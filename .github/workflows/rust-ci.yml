@@ -1,0 +1,36 @@
+name: rust-ci
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+    paths:
+      - "src-tauri/**"
+defaults:
+  run:
+    working-directory: src-tauri
+
+jobs:
+  rust-lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout Crate
+        uses: actions/checkout@v4
+
+      - name: Set Toolchain
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: stable
+          components: rustfmt, clippy
+
+      - name: Run Check
+        run: cargo check
+
+      - name: Run rustfmt
+        run: cargo fmt --all -- --check
+
+      - name: Run clippy
+        run: cargo clippy -- -D warnings
