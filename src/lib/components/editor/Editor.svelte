@@ -2,7 +2,12 @@
   import type { Action } from "svelte/action"
   import "@milkdown/theme-nord/style.css"
   import "prism-themes/themes/prism-nord.css"
-  import { Editor, rootCtx, defaultValueCtx, editorViewOptionsCtx } from "@milkdown/core"
+  import {
+    Editor,
+    rootCtx,
+    defaultValueCtx,
+    editorViewOptionsCtx,
+  } from "@milkdown/core"
   import { commonmark } from "@milkdown/preset-commonmark"
   import { gfm } from "@milkdown/preset-gfm"
   import { nord } from "@milkdown/theme-nord"
@@ -43,6 +48,7 @@
       .use(listener)
       .create()
   }
+  // TODO タグを書けるプラグイン作る
 </script>
 
 <div class="min-h-full" use:setEditor />

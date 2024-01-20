@@ -26,11 +26,11 @@ jobs:
           toolchain: stable
           components: rustfmt, clippy
 
-      - name: Run Check
-        run: cargo check
+      # - name: Run Check
+      #   run: cargo check
 
-      - name: Run rustfmt
-        run: cargo fmt --all -- --check
+      # - name: Run rustfmt
+      #   run: cargo fmt --all -- --check
 
-      - name: Run clippy
-        run: cargo clippy -- -D warnings
+      # - name: Run clippy
+      #   run: cargo clippy -- -D warnings

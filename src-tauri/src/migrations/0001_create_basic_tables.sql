@@ -9,7 +9,7 @@ create table diaries
 create table tags
 (
     id   integer primary key autoincrement,
-    name text unique
+    name text unique on conflict ignore
 );
 
 create table diary_tags
