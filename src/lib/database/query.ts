@@ -25,13 +25,14 @@ async function transaction<T>(
   conn: Database,
   queryFunc: (connection: Database) => Promise<T>
 ): Promise<T> {
-  await conn.execute("BEGIN TRANSACTION createDiary")
+  const transactionName = crypto.randomUUID()
+  await conn.execute(`BEGIN TRANSACTION '${transactionName}'`)
   try {
     const result = await queryFunc(conn)
-    await conn.execute("COMMIT TRANSACTION createDiary")
+    await conn.execute(`COMMIT TRANSACTION '${transactionName}'`)
     return result
   } catch (e) {
-    await conn.execute("ROLLBACK TRANSACTION createDiary")
+    await conn.execute(`ROLLBACK TRANSACTION '${transactionName}'`)
     throw e
   }
 }

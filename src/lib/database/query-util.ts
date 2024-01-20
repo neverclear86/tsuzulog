@@ -5,8 +5,8 @@ interface ArrayToParamsOption {
   endsWith: string
 }
 
-export function arrayToParams(
-  arr: unknown[],
+export function arrayToParams<T>(
+  arr: T[],
   _option?: Partial<ArrayToParamsOption>
 ): string {
   const option: ArrayToParamsOption = Object.assign(
