@@ -7,11 +7,11 @@ reviews:
   review_status: true
   collapse_walkthrough: false
   path_filters:
-    - "src/**/*.(ts|svelte)"
+    - "src/**/*.{ts,svelte}"
     - "src-tauri/**/*.rs"
     # - "tests/**/*.ts"
   path_instructions:
-    - path: "src/**/*.(ts|svelte)"
+    - path: "src/**/*.{ts,svelte}"
       instructions: |-
         Sveltekitを使ったSPAアプリを構築するコードであり､以下の観点を重点においてレビューしてください
         - Typescript部分はGoogleの JavaScript style guide と eslint に従ってレビューし、不具合あれば指摘してください
